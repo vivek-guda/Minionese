@@ -4,7 +4,7 @@ var outputTxt = document.querySelector("#outputArea");
 var retrybtn = document.querySelector("#retry");
 
 var clickHandler = () => {
-    var url = "https://api.funtranslations.com/translate/yoda.js" + "?text=" + txtInp.value;
+    var url = "https://api.funtranslations.com/translate/minion.json" + "?text=" + txtInp.value;
     axios.get(url)
     .then(res => {
         var translatedText = res.data.contents.translated;
@@ -19,5 +19,5 @@ translatebtn.addEventListener("click",clickHandler);
 
 retrybtn.addEventListener("click",() => {
     txtInp.value = "";
-    outputTxt.value = "";
+    outputTxt.innerText = "";
 })
